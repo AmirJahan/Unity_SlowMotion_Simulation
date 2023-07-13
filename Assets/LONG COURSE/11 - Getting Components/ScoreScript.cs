@@ -1,6 +1,5 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-public class ScoreScript : MonoBehaviour
-{
+public class ScoreScript : MonoBehaviour {
     public int scoreValue;
 }

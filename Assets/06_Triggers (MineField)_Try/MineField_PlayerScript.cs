@@ -1,11 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-public class MineField_PlayerScript : MonoBehaviour
-{
+public class MineField_PlayerScript : MonoBehaviour {
     [SerializeField] float speed = 10f;
 
-    void FixedUpdate()
-    {
+    void FixedUpdate() {
         float x = Input.GetAxis("Horizontal"); // ad
         float y = 0;
         float z = Input.GetAxis("Vertical"); // ws

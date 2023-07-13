@@ -1,10 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-public class PushDownFast : MonoBehaviour
-{
-    void Update()
-    {
-        gameObject.GetComponent<Rigidbody>().velocity = 
-                    new Vector3 (0, -100, 0);
+public class PushDownFast : MonoBehaviour {
+    void Update() {
+        gameObject.GetComponent<Rigidbody>().velocity =
+                    new Vector3(0, -100, 0);
     }
 }

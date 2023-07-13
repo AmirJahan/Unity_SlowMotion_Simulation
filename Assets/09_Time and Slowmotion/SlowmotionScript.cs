@@ -1,7 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-public class SlowmotionScript : MonoBehaviour
-{
+public class SlowmotionScript : MonoBehaviour {
     // Hey guys,
     // if you reached this, remember to look at "Project Settins -> Time" as well
 
@@ -14,17 +13,14 @@ public class SlowmotionScript : MonoBehaviour
 
     bool slowMode = false;
 
-    private void Start()
-    {
+    private void Start() {
         fixedDeltaTime = Time.fixedDeltaTime;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyUp (timeKey))
-        {
+    void Update() {
+        if (Input.GetKeyUp(timeKey)) {
             slowMode = !slowMode;
-            
+
             Time.timeScale = slowMode ? slowTimeScale : 1f;
             Time.fixedDeltaTime = fixedDeltaTime * Time.timeScale;
         }

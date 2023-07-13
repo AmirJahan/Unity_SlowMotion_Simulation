@@ -1,11 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-public class TranslateScript : MonoBehaviour
-{
+public class TranslateScript : MonoBehaviour {
     [SerializeField] float speed = 10f;
 
-    void Update()
-    {
+    void Update() {
         float x = Input.GetAxis("Horizontal"); // ad
         float y = 0;
         float z = Input.GetAxis("Vertical"); // ws

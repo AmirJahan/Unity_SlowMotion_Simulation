@@ -1,18 +1,14 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-public class GravityScript : MonoBehaviour
-{
+public class GravityScript : MonoBehaviour {
     Rigidbody rigidbody;
     float gJupiter = 2.528f;  //gravity on the Jupiter.
 
-    private void Awake()
-    {
+    private void Awake() {
         rigidbody = gameObject.GetComponent<Rigidbody>();
     }
 
-
-    void Start()
-    {
+    void Start() {
         // this is global for all objects
         Physics.gravity = new Vector3(0, -1.0F, 0);
 
@@ -20,9 +16,7 @@ public class GravityScript : MonoBehaviour
         rigidbody.useGravity = true;
     }
 
-
-    void FixedUpdate()
-    {
+    void FixedUpdate() {
         rigidbody.AddForce(Vector3.down * rigidbody.mass * gJupiter);
     }
 }

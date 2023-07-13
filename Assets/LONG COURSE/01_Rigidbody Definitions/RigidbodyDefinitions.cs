@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 /*
  * Force	Add a continuous force to the rigidbody, using its mass.
@@ -8,8 +8,7 @@ VelocityChange	Add an instant velocity change to the rigidbody, ignoring its mas
  */
 public enum Mode { Happy, Sad, Neutal }
 
-public class RigidbodyDefinitions : MonoBehaviour
-{
+public class RigidbodyDefinitions : MonoBehaviour {
     // this is an enum, if you are n0t familiar, look at the example above (not used in this script)
     public ForceMode mode;
 
@@ -17,8 +16,7 @@ public class RigidbodyDefinitions : MonoBehaviour
 
     Rigidbody rigidbody;
 
-    private void Start()
-    {
+    private void Start() {
         rigidbody = this.GetComponent<Rigidbody>();
 
         // smooth out the effect of running physics at a fixed frame rate, used for main characters
@@ -26,7 +24,6 @@ public class RigidbodyDefinitions : MonoBehaviour
 
         // Engine guesses the next position
         rigidbody.interpolation = RigidbodyInterpolation.Extrapolate;
-
 
         // for objects that fast moving object collide with
         rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
@@ -47,14 +44,10 @@ public class RigidbodyDefinitions : MonoBehaviour
         rigidbody.angularDrag = 10f;
     }
 
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Space)) {
             // forces are dampened by the Drag
             rigidbody.AddForce(Vector3.up * mult, mode);
         }
-
     }
 }

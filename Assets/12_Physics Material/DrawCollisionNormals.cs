@@ -1,9 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-public class DrawCollisionNormals : MonoBehaviour
-{
-    private void OnCollisionEnter(Collision collision)
-    {
+public class DrawCollisionNormals : MonoBehaviour {
+    private void OnCollisionEnter(Collision collision) {
         Debug.Log("Collision poision is: " + collision.contacts[0].point);
 
         Vector3 startPoint = collision.contacts[0].point;

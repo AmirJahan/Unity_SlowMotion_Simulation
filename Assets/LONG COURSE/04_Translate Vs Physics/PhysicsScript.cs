@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class PhysicsScript : MonoBehaviour {
     //If you are doing this for a 2D object, remember to freeze the rotations
@@ -26,7 +26,7 @@ public class PhysicsScript : MonoBehaviour {
         rigidbody.AddForce(direction * speed);
 
         // or using move position, which is the same as Translate, but with consideration for phsyics
-        // this'll look just like the Translate, but will detect collisions. 
+        // this'll look just like the Translate, but will detect collisions.
         rigidbody.MovePosition(transform.position + (direction * speed * Time.deltaTime));
     }
 }

@@ -1,25 +1,21 @@
 using UnityEngine;
 
-public class GameObjectColorScript : MonoBehaviour
-{
+public class GameObjectColorScript : MonoBehaviour {
     // we wnt to get 5 game objects
     [SerializeField] GameObject obj_1;
 
-    private void Update ()
-    {
-        if (Input.GetMouseButtonUp (0))
-        {
-            int myRandom = Random.Range (1, 6);
-            float r = Random.Range (0.0f, 1.0f);
-            float g = Random.Range (0.0f, 1.0f);
-            float b = Random.Range (0.0f, 1.0f);
+    private void Update() {
+        if (Input.GetMouseButtonUp(0)) {
+            int myRandom = Random.Range(1, 6);
+            float r = Random.Range(0.0f, 1.0f);
+            float g = Random.Range(0.0f, 1.0f);
+            float b = Random.Range(0.0f, 1.0f);
 
-            Color myRandomColor = new Color (r, g, b);
+            Color myRandomColor = new Color(r, g, b);
 
-            switch (myRandom)
-            {
+            switch (myRandom) {
                 case 1:
-                    obj_1.GetComponent<Renderer> ().material.color = myRandomColor;
+                    obj_1.GetComponent<Renderer>().material.color = myRandomColor;
                     break;
                 default:
                     break;

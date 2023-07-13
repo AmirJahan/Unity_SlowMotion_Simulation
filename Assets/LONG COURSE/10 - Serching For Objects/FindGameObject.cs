@@ -1,14 +1,13 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-public class FindGameObject : MonoBehaviour
-{
+public class FindGameObject : MonoBehaviour {
     GameObject toFind;
-    void Start()
-    {
+
+    void Start() {
         toFind = GameObject.Find("MyObjectAtThatLocatiobn");
 
         // you don't necessarily need to store the GameObject
-        GameObject.Find("TheObject I am Looking for").SetActive ( false);
+        GameObject.Find("TheObject I am Looking for").SetActive(false);
         Destroy(toFind);
 
         // to search for objects in group
@@ -20,10 +19,9 @@ public class FindGameObject : MonoBehaviour
         Destroy(toFind);
 
         GameObject[] foundObj = GameObject.FindGameObjectsWithTag("EnemyTag");
-               
-        foreach (GameObject any in foundObj)
-        {
-            Destroy( any);
+
+        foreach (GameObject any in foundObj) {
+            Destroy(any);
         }
     }
 }

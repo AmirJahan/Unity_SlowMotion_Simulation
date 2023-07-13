@@ -1,28 +1,23 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
-public class PaticleCollision : MonoBehaviour
-{
+public class PaticleCollision : MonoBehaviour {
     public ParticleSystem part;
     public List<ParticleCollisionEvent> collisionEvents;
 
-    void Start()
-    {
+    void Start() {
         part = GetComponent<ParticleSystem>();
         collisionEvents = new List<ParticleCollisionEvent>();
     }
 
-    void OnParticleCollision(GameObject other)
-    {
+    void OnParticleCollision(GameObject other) {
         int numCollisionEvents = part.GetCollisionEvents(other, collisionEvents);
 
         Rigidbody rb = other.GetComponent<Rigidbody>();
         int i = 0;
 
-        while (i < numCollisionEvents)
-        {
-            if (rb)
-            {
+        while (i < numCollisionEvents) {
+            if (rb) {
                 Vector3 pos = collisionEvents[i].intersection;
                 Vector3 force = collisionEvents[i].velocity * 10;
                 rb.AddForce(force);
